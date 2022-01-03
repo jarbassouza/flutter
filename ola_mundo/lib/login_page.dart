@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:ola_mundo/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -27,7 +26,12 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                const SizedBox(height: 10),
+                SizedBox(
+                  width: 150,
+                  height: 150,
+                  child: Image.asset('assets/images/base.png'),
+                ),
+                const SizedBox(height: 40),
                 TextField(
                   onChanged: (text) {
                     email = text;
@@ -49,10 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                 RaisedButton(
                   onPressed: () {
                     if (email == 'jarbas@gmail.com' && password == '123') {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                            builder: (context) => const HomePage()),
-                      );
+                      Navigator.of(context).pushReplacementNamed('/home');
                     } else {
                       print('Login Inválido');
                     }
