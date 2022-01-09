@@ -8,4 +8,10 @@ class Venda {
   
   Venda({required this.cliente, this.itens = const [] });
 
+  double get valorTotal {
+    return itens
+    .map((i) => i.quantidade * i.preco)
+    .reduce((total, atual) => total + atual);
+  }
+
 }

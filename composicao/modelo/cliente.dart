@@ -2,8 +2,10 @@ class Cliente {
    
    String? nome;
    String? cpf;
-
-   Cliente({this.nome, this.cpf}); // Usando chaves {} para Parementros nomeandos 
-
+   
+   //Construtor
+   // Usando {} Parementros nomeandos
+   Cliente({this.nome, this.cpf}); 
+   
 }
 
