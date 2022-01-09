@@ -10,7 +10,7 @@ class Item {
   Item({required this.produto, required this.quantidade});
 
   double get preco {
-    if (produto != null && _preco == null) {
+    if (produto != null && _preco > 0) {
       _preco = produto.precoComDesconto;
     }
     return _preco;
