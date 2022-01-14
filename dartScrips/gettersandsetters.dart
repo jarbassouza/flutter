@@ -4,10 +4,8 @@ class Pessoa {
   bool casado;
   double? _dinheiro;
 
-  Pessoa({required this.nome, required this.idade, this.casado = false}) {
-    print('Nome: $nome - Idade: $idade Anos');
-  }
-
+  Pessoa({required this.nome, required this.idade, this.casado = false}){print('Nome: $nome - Idade: $idade Anos');}
+  
   int aniversario() {
     print('Parabens! $nome');
     idade++;
@@ -33,7 +31,14 @@ class Pessoa {
     print('Lendo dinheiro de $nome');
     return _dinheiro;
   }
+
+   @override
+   String toString(){
+    return 'Nome: ${nome} - Idade: ${idade}';
+   }
+
 }
+
 
 void main() {
   Pessoa p1 = Pessoa(nome: 'Jarbas', idade: 53, casado: true);
@@ -44,4 +49,7 @@ void main() {
 
   print('Dinheiro de ${p1.nome}: R\$.${p1.dinheiro}');
   print('Dinheiro de ${p2.nome}: R\$.${p2.dinheiro}');
+
+print('********');
+  print(p1);
 }
